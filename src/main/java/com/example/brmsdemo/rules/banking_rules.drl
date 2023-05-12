@@ -1,0 +1,9 @@
+import com.example.brmsdemo.objectModel
+
+rule "Minimum Deposit Rule"
+	when
+		$account: Account(balance < 200)
+	then
+		$account.setStatus("Rejected: Minimum deposit amount not met")
+end
+	
